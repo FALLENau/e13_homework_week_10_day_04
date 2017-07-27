@@ -27,11 +27,14 @@ function Animal(type, legs) {
   this.legs = legs
   this.logInfo = function() {
     console.log("The " + this.type + " has " + this.legs + " legs")
-  }
+  }/*.bind(this)*/
 }
 
 var cat = new Animal('Cat', 4)
 cat.logInfo()
 //when calling a function inside a method the function losses it's "this" and
-//refers to the global "this"
-setTimeout(cat.logInfo.bind(cat), 4000)
+//refers to the global "this" hench setTimeout will return undifinded
+setTimeout(cat.logInfo, 2000)
+//the solution for this is to .bind(obj) obj = cat in this instance
+// setTimeout(cat.logInfo.bind(cat), 2000)
+// or add .bind(this) onto the function(but not prototype)
