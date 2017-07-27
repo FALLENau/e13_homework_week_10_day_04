@@ -1,14 +1,14 @@
 var _ = require("lodash")
 
-var Account = function(name, type, amount) {
+var Account = function(name, accountType, amount) {
   this.name = name
-  this.accountType = type
+  this.accountType = accountType
   this.amount = amount
 }
 
 var reeceAcc = new Account('reece', 'personal', 1200 )
 var ciaranAcc = new Account('ciran', 'personal', 99000 )
-var shamieAcc = new Account('shamie_bis', 'buisness', 3200 )
+var shamieAcc = new Account('shamie_bis', 'business', 3200 )
 
 var Bank = function() {
   this.accounts = []
@@ -39,7 +39,7 @@ Bank.prototype = {
   },
 
   findAmountByAccType: function(accounts, typeOf) {
-    var found = _.filter(accounts, {type: typeOf})
+    var found = _.filter(accounts, {accountType: typeOf})
     return this.findTotalValueOfAllAccounts(found)
   }
 
@@ -53,10 +53,10 @@ newBank.addAccount(shamieAcc)
 var temp = newBank.findingTheLargestAccount(newBank.accounts)
 var totalValue = newBank.findTotalValueOfAllAccounts(newBank.accounts)
 var meanValue = newBank.findAverageValueOfAllAccounts(newBank.accounts)
-var findAccAmount = newBank.findAmountByAccType('buisness')
+var findAccAmount = newBank.findAmountByAccType(newBank.accounts, 'business')
 // console.log(newBank.accounts)
 
-console.log(temp)
-console.log(totalValue)
-console.log(meanValue)
+// console.log(temp)
+// console.log(totalValue)
+// console.log(meanValue)
 console.log(findAccAmount)
