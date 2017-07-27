@@ -13,7 +13,7 @@
 // addFive()//logs out 2
 // addFive()//logs out 3
 
-// console.log(add())//logs out undifined becuz var counter doesn't
+//console.log(add())//logs out undifined becuz var counter doesn't
 //exist out side of function
 
 // var addTen = setupAddFunction(10)
@@ -22,11 +22,16 @@
 // addTen()
 // addTen()
 
-var addMessage = setupConversation() {
-
-  
+var addMessage = setupConversation(msg) {
+  var messages = []
+  return function() {
+    messages.push(msg)
+    console.log(messages)
+  }
 }
 
 addMessage("I've got something very important to tell you that must never be forgotten");
 addMessage("Oh yeah?");
 addMessage("Oh, no. Wait... It's fine.");
+
+// console.log("The whole message is: ", addMessage)
