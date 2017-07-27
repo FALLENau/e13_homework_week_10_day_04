@@ -22,16 +22,31 @@
 // addTen()
 // addTen()
 
-var addMessage = setupConversation(msg) {
+var setupConversation = function() {
   var messages = []
-  return function() {
+
+  return function(msg) {
     messages.push(msg)
-    console.log(messages)
+    return messages;
+    // console.log(messages)
   }
 }
 
-addMessage("I've got something very important to tell you that must never be forgotten");
-addMessage("Oh yeah?");
-addMessage("Oh, no. Wait... It's fine.");
+//jarrod solution
+// var setupConversation = function() {
+//   var messages = []
+//   return function (newMsg) {
+//     messages.push(newMsg)
+//     messages.forEach(function(msg) {
+//       console.log(msg)
+//     })
+//   }
+// }
 
-// console.log("The whole message is: ", addMessage)
+var addMessage = setupConversation()
+
+addMessage("I've got something very important to tell you that must never be forgotten")
+addMessage("Oh yeah?")
+var message = addMessage("Oh, no. Wait... It's fine.")
+
+console.log("The whole message is: ", message )
