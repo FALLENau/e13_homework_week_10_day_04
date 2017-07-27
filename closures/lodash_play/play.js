@@ -14,8 +14,8 @@ var users = [
 var newNumbers1 = _.shuffle( numbers )
 var newNumbers2 = _.difference( numbers, [ 23, 45, 98, 5] )
 var newNumbers3 = _.invokeMap([[5, 1, 7], [3, 2, 1]], 'sort')
-var searchByType = _.orderBy(users, ['user', 'age'], ['asc', 'asc'])
 var searchByAge = _.orderBy(users, ['age', 'user'], ['asc', 'asc'])
+var searchByType = _.orderBy(users, ['user', 'age'], ['desc', 'asc'])
 
 
 console.log(newNumbers1)
