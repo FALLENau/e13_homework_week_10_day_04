@@ -52,3 +52,19 @@
 // }, 5000)
 //
 // console.log("now")
+
+// [1,2,3,4].forEach(function(i) {
+//   console.log(i)
+//   delay()
+// })
+//
+// function asyncForEach(array, cb) {
+//   array.forEach(function() {
+//     setTimeout(cb, 0)
+//   })
+// }
+//
+// asyncForEach([1,2,3,4], function(i) {
+//   console.log("Processnig async", i)
+//   delay()
+// })// what is delay?
